@@ -1,32 +1,49 @@
-import React from "react";
-import ProductCard from "components/ProductCard";
+import "./App.css";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import ProductCard from "./components/ProductCard";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="app">
-      <h1>Product List</h1>
+    <>
+      <Header storeName="ComponentCorner" />
 
-      <ProductCard
-        name="Earbuds"
-        price={59.99}
-        image="https://placehold.co/600x400"
-        description="Wireless earbuds with noise cancellation and high sound quality."
+      <Hero
+        title="Welcome to ComponentCorner"
+        subtitle="Your Corner for your daily electronic needs."
+        cta="Shop Now!"
       />
 
-      <ProductCard
-        name="Tablet"
-        price={149.99}
-        image="https://placehold.co/600x400"
-        description="A small portable device that can be used for anything on the go!"
-      />
+      <main className="products">
+        <ProductCard
+          name="Wireless Earbuds"
+          price={99.99}
+          image="https://placehold.co/600x400"
+          description="Comes with noise cancellation and high sound quality."
+        />
 
-      <ProductCard
-        name="Laptop"
-        price={599.99}
-        image="https://placehold.co/600x400"
-        description="A laptop used for gaming and other necessities like work."
+        <ProductCard
+          name="Bluetooth Speaker"
+          price={59.99}
+          image="https://placehold.co/600x400"
+          description="A small, portable speaker that can satisfy your music needs."
+        />
+
+        <ProductCard
+          name="Laptop"
+          price={599.99}
+          image="https://placehold.co/600x400"
+          description="A portable, sleek device ready for work and play."
+        />
+      </main>
+
+      <Footer
+        storeName="ComponentCorner"
+        email="support@componentcorner.com"
+        phone="(999) 432-5927"
       />
-    </div>
+    </>
   );
 }
 
