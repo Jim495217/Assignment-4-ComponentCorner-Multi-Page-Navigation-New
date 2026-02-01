@@ -1,23 +1,15 @@
 import Hero from "../components/Hero";
 
-const HomePage = () => {
+function HomePage() {
   return (
     <>
-      <Hero
-        title="Welcome to ComponentCorner"
-        subtitle="Your Corner for your daily electronic needs."
-        cta="Shop Now!"
-      />
-
-      <section style={{ padding: "40px", textAlign: "center" }}>
+      <Hero title="Welcome to ComponentCorner" subtitle="Your corner for your daily electronic needs." cta="Shop Now" />
+      <section>
         <h2>Why Shop With Us?</h2>
-        <p>
-          We provide quality electronics at affordable prices with reusable,
-          modern React components behind the scenes.
-        </p>
+        <p>Quality products. Fast shipping. Great support.</p>
       </section>
     </>
   );
-};
+}
 
 export default HomePage;
