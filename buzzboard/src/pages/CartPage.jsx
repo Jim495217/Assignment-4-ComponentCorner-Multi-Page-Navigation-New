@@ -1,8 +1,6 @@
 import CartItem from "../components/CartItem";
 
-const CartPage = ({ cart, removeFromCart }) => {
-  const cartTotal = cart.reduce((total, item) => total + item.price, 0);
-
+function CartPage({ cart, removeFromCart, cartTotal }) {
   return (
     <section className="cart">
       <h2>Shopping Cart</h2>
@@ -11,19 +9,14 @@ const CartPage = ({ cart, removeFromCart }) => {
         <p>Your cart is empty.</p>
       ) : (
         <>
-          {cart.map((item) => (
-            <CartItem
-              key={item.id}
-              item={item}
-              onRemove={removeFromCart}
-            />
+          {cart.map(item => (
+            <CartItem key={item.id} item={item} onRemove={removeFromCart} />
           ))}
-
           <h3>Total: ${cartTotal.toFixed(2)}</h3>
         </>
       )}
     </section>
   );
-};
+}
 
 export default CartPage;
